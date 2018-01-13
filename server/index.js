@@ -1,6 +1,7 @@
 const express = require('express'),
   path = require('path'),
   open = require('open'),
+  chalk = require('chalk'),
   port = 3000,
   app = express();
 
@@ -9,8 +10,10 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, err => {
-  if (!err)
+  if (!err){
+    console.log(chalk.green("Starting app in dev mode"));
     open('http://localhost:' + port);
+  }
   else
-    console.error('error-server', err);
+  console.log(chalk.red("Could not run the app", err));
 });

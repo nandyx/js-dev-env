@@ -1,4 +1,4 @@
-# Javascript develoment enviroment
+# Javascript Development Environment
 
 *Line CheckList:*
 ## Package Management
@@ -38,18 +38,75 @@ https://nodejs.org/es/
 
 `nsp check`
 
+## Web Server
 
-## Bundling
-Minification
-Sorcemaps
-Transpiling
-Dynamic HTML Generation
-Centralized HTTP
-Mock API framework
-Component libraies
-Development Webserver
-Linting
-Automated testing
-Continuous Integration
-Automated build
-Automated deployment
+ 1. **Development WebServers**
+ 
+	**options**
+	- http-server
+	- live-server
+	- Express
+	- budo
+	- Webpack dev server
+	- Browsersync
+
+	 **Recommendation**
+	 
+	Express
+  
+	 **Implement**
+	 
+```
+const express = require('express'),
+  path = require('path'),
+  open = require('open'),
+  port = 3000,
+  app = express();
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../src/views/index.html'));
+});
+
+app.listen(port, err => {
+  if (!err)
+    open('http://localhost:' + port);
+  else
+    console.log('error-server', err);
+});
+```
+
+2.  **Sharing Work-in-progress**
+
+	**options**
+	- localtunnel
+	- ngrok
+	- Surge
+	- now
+	
+	 **Recommendation**
+	 
+	localtunnel
+  
+	 **Use**
+	  
+ `lt --port 3000 --subdomain your_sub_name`
+
+## Automation
+
+**options**
+- Grunt
+- Gulp
+- NPM Scripts
+
+**Recommendation**
+
+NPM Scripts
+**Use**
+
+Inside Scripts from  `package.json` :
+```
+    "start":"node server/index.js",
+    "share": "lt --port 3000"
+```
+
+
