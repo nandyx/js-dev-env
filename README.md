@@ -53,8 +53,13 @@ https://nodejs.org/es/
 	 **Recommendation**
 	 
 	Express
+	
+
+> **Dependencies:** path (from node), open, chalk
+
   
-	 **Implement**
+  
+**Implement**
 	 
 ```
 const express = require('express'),
@@ -101,12 +106,45 @@ app.listen(port, err => {
 **Recommendation**
 
 NPM Scripts
+
 **Use**
 
 Inside Scripts from  `package.json` :
 ```
     "start":"node server/index.js",
     "share": "lt --port 3000"
+```
+
+## Transpiling
+
+![enter image description here](http://i0.wp.com/techinpink.com/wp-content/uploads/2016/12/Screen-Shot-2016-12-19-at-5.44.19-AM.png)
+
+**options**
+- Babel
+- TypeScript
+- Elm
+
+**Recommendation**
+
+ Babel
+
+>**Dependences:** babel-cli, babel-core, babel-loader, babel-preset-env, babel-register, babel-preset-es2015
+ 
+**Use**
+
+Add `.babelrc` in your project:
+
+```
+{
+  "presets": [
+      "es2015"
+  ]
+}
+```
+And modify  npm script:
+
+```
+"start": "babel-node server/app.js",
 ```
 
 
