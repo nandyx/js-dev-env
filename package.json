@@ -4,8 +4,10 @@
   "description": "JavaScript development environment",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node server/app.js",
-    "share": "lt --port 3000"
+    "start": "babel-node buildScripts/server.js",
+    "share": "lt --port 3000",
+    "lint":"esw webpack.config.* src/js buildScripts",
+    "lint:watch":"npm run lint -- --watch"
   },
   "repository": {
     "type": "git",

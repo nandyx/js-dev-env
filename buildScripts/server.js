@@ -4,6 +4,7 @@ import open from 'open';
 import chalk from 'chalk';
 import webpack from 'webpack';
 import config from '../webpack.config.dev';
+/* eslint-disable no-console */
 
 const port = process.env.port || 3000,
   app = express(),
@@ -26,5 +27,5 @@ app.listen(port, err => {
     open('http://localhost:' + port);
   }
   else
-    console.log(chalk.red("Could not run the app", err));
+    console.log(chalk.red("Couldn't run the app", err));
 });
