@@ -6,8 +6,8 @@
   "scripts": {
     "start": "babel-node buildScripts/server.js",
     "share": "lt --port 3000",
-    "lint":"esw webpack.config.* src/js buildScripts",
-    "lint:watch":"npm run lint -- --watch"
+    "lint": "esw webpack.config.* src/js buildScripts",
+    "lint:watch": "npm run lint -- --watch"
   },
   "repository": {
     "type": "git",
