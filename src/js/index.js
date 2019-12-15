@@ -7,7 +7,6 @@ let user = new User('nandi', 'nandi xd', 'tevaleverga@asdasd');
 let home = new Home();
 let contact = new Contact('Lesly', 'de Legorreta');
 
-home.dialog();
 
 console.log('user=>', user.getHi()); //eslint-disable-line no-console
 console.log('user=>', user.email);//eslint-disable-line no-console
